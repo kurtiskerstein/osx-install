@@ -43,7 +43,7 @@ sudo bash -c 'echo /usr/local/bin/zsh >> /etc/shells'
 chsh -s /usr/local/bin/zsh #Switch default shell to Zsh
 
 #Add oh-my-zsh, theme, plugins, powerline fonts
-echo "Installing and configuring oh-my-zsh…"
+#echo "Installing and configuring oh-my-zsh…"
 #sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 #sed -i -e 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/g' ~/.zshrc
 #sed -i -e 's/  git/  colored-man-pages\n  git\n  python\n  sublime/g' ~/.zshrc
@@ -57,10 +57,11 @@ echo "Installing and configuring oh-my-zsh…"
 
 
 #Python time!
-#brew install pyenv pyenv-virtualenv
-#echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zshrc
+brew install pyenv direnv #pyenv-virtualenv
+echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zshenv
+echo -e 'if which direnv > /dev/null; then\n eval "$(direnv hook zsh";\nfi' >> ~/.zshenv
 #echo -e 'if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi' >> ~/.zshrc
-#exec "$SHELL"
+exec "$SHELL"
 
 #Type 'pyenv install -l' to see a list of available versions for install
 #Installing the plugin below creates the ability to also use "pyenv install-latest".
@@ -79,6 +80,7 @@ binaries=(
   tree
   vim
   wget
+  sed
 )
 
 echo "Installing binaries..."
