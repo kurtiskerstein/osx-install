@@ -43,8 +43,8 @@ sudo bash -c 'echo /usr/local/bin/zsh >> /etc/shells'
 chsh -s /usr/local/bin/zsh #Switch default shell to Zsh
 
 #Add oh-my-zsh, theme, plugins, powerline fonts
-#echo "Installing and configuring oh-my-zsh…"
-#sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+echo "Installing and configuring oh-my-zsh…"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 #sed -i -e 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/g' ~/.zshrc
 #sed -i -e 's/  git/  colored-man-pages\n  git\n  python\n  sublime/g' ~/.zshrc
 
@@ -95,6 +95,7 @@ brew cask install --appdir="/Applications" iterm2
 brew cask install --appdir="/Applications" slack
 brew cask install --appdir="/Applications" virtualbox
 brew cask install --appdir="/Applications" vagrant
+brew cask install --appdir="/Applications" gns3
 
 
 #Clean up after Homebrew
