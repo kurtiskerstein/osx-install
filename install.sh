@@ -58,8 +58,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 #Python time!
 brew install pyenv direnv #pyenv-virtualenv
-echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zshenv
-echo -e 'if which direnv > /dev/null; then\n eval "$(direnv hook zsh";\nfi' >> ~/.zshenv
+echo 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zshenv
+echo 'if which direnv > /dev/null; then\n eval "$(direnv hook zsh)";\nfi' >> ~/.zshrc
 #echo -e 'if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi' >> ~/.zshrc
 exec "$SHELL"
 
